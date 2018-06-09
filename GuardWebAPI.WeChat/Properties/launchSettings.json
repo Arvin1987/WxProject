@@ -1,0 +1,34 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/GuardWebAPI.WeChat",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:10826/",
+      "sslPort": 44388
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IIS",
+      "launchBrowser": true,
+      "launchUrl": "api/wechat/config/wxeeb48df50f322507",
+      "environmentVariables": {
+        "GUARD_PROJECTID": "web.dnc.api.wechat",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "GuardWebAPI.WeChat": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:10827/"
+    }
+  }
+}

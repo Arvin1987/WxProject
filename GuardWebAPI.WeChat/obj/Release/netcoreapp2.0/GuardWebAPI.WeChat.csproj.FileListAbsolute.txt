@@ -1,0 +1,13 @@
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\deploy.sh
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\Dockerfile
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\GuardWebAPI.WeChat.deps.json
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\GuardWebAPI.WeChat.runtimeconfig.json
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\GuardWebAPI.WeChat.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\GuardWebAPI.WeChat.dll
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\bin\Release\netcoreapp2.0\GuardWebAPI.WeChat.pdb
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.dll
+C:\Users\Administrator\source\repos\GuardWebAPI.WeChat\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.pdb
