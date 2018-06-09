@@ -353,5 +353,48 @@ namespace GuardWebAPI.WeChat.Controllers
                 };
             }
         }
+
+        /// <summary>
+        /// 查询H5用户信息
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        [HttpGet("api/activity/geth5userinfo")]
+        public ResultBase GetH5UserInfo(string code)
+        {
+            ActivityInfoService activityInfoService = new ActivityInfoService();
+            H5UserInfo resq = null;
+            try
+            {
+                resq = activityInfoService.GetH5UserInfo(code);
+            }
+            catch (Exception ex)
+            {
+                return new ResultBase
+                {
+                    IsSuccess = false,
+                    Code = CodeConstant.ServerError,
+                    Message = ex.Message + ex.StackTrace
+                };
+            }
+
+            if (resq != null && !string.IsNullOrEmpty(resq.openid))
+            {
+                return new ResultBase
+                {
+                    IsSuccess = true,
+                    Code = CodeConstant.Success,
+                    Data = resq
+                };
+            }
+            else
+            {
+                return new ResultBase
+                {
+                    IsSuccess = false,
+                    Code = CodeConstant.DataNull
+                };
+            }
+        }
     }
 }

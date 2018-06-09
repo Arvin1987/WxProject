@@ -17,7 +17,6 @@ C:\project\WxProject\GuardWebAPI.WeChat\bin\Debug\netcoreapp2.0\GuardWebAPI.WeCh
 C:\project\WxProject\GuardWebAPI.WeChat\bin\Debug\netcoreapp2.0\GuardWebAPI.WeChat.runtimeconfig.dev.json
 C:\project\WxProject\GuardWebAPI.WeChat\bin\Debug\netcoreapp2.0\GuardWebAPI.WeChat.dll
 C:\project\WxProject\GuardWebAPI.WeChat\bin\Debug\netcoreapp2.0\GuardWebAPI.WeChat.pdb
-C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.csprojResolveAssemblyReference.cache
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.csproj.CoreCompileInputs.cache
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfoInputs.cache
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfo.cs
