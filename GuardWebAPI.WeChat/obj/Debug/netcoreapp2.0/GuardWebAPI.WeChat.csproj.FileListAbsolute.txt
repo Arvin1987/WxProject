@@ -22,3 +22,4 @@ C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeCh
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfo.cs
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.dll
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Debug\netcoreapp2.0\GuardWebAPI.WeChat.pdb
+C:\project\WxProject\GuardWebAPI.WeChat\bin\Debug\netcoreapp2.0\qrcode.jpg
