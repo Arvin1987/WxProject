@@ -207,17 +207,17 @@ namespace GuardWebAPI.WeChat.Services.ActivityInfo
             return result;
         }
 
-        internal H5UserInfo GetH5UserInfo(string code)
+        public H5UserInfo GetH5UserInfo(string code)
         {
             H5UserInfo h5UserInfo = null;
             WebClient client = new WebClient();
 
-            string tokenResult = client.DownloadString($"https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx3283d85d64449029&secret=f6b15e0e2c8eac475e45e3bb61c349e8&code={ code }&grant_type=authorization_code");
+            string tokenResult = client.DownloadString($"https://mpx.wetalk.im/sns/oauth2/access_token?appid=wxc1a7dbfa678d92ce&secret=rmgMs5fnuoRBJ3YyZexNV2w00huW0M&code={ code }&grant_type=authorization_code");
 
             if (!string.IsNullOrEmpty(tokenResult))
             {
                 H5Token token = JsonConvert.DeserializeObject<H5Token>(tokenResult);
-                string h5UserInfoResult = client.DownloadString($"https://api.weixin.qq.com/sns/userinfo?access_token={ token.access_token }&openid={ token.openid }&lang=zh_CN");
+                string h5UserInfoResult = client.DownloadString($"https://mpx.wetalk.im/sns/userinfo?access_token={ token.access_token }&openid={ token.openid }&lang=zh_CN");
 
                 if (!string.IsNullOrEmpty(h5UserInfoResult))
                 {
