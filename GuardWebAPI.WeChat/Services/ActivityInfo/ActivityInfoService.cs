@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using GuardWebAPI.WeChat.Data;
 using GuardWebAPI.WeChat.Domain;
+using GuardWebAPI.WeChat.JSSDK.Models;
 using GuardWebAPI.WeChat.Models.ActivityInfo;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -225,6 +227,44 @@ namespace GuardWebAPI.WeChat.Services.ActivityInfo
                 }
             }
             return h5UserInfo;
+        }
+
+        /// <summary>
+        /// 获取h5票据
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public string GetH5Ticket(string code)
+        {
+            string ticke = string.Empty;
+            WebClient client = new WebClient();
+
+            string tokenResult = client.DownloadString($"https://mpx.wetalk.im/cgi-bin/token?grant_type=client_credential&appid=wxc1a7dbfa678d92ce&secret=rmgMs5fnuoRBJ3YyZexNV2w00huW0M");
+            //string tokenResult = client.DownloadString($"https://mpx.wetalk.im/sns/oauth2/access_token?appid=wxc1a7dbfa678d92ce&secret=rmgMs5fnuoRBJ3YyZexNV2w00huW0M&code={ code }&grant_type=authorization_code");
+            if (!string.IsNullOrEmpty(tokenResult))
+            {
+                H5Token token = JsonConvert.DeserializeObject<H5Token>(tokenResult);
+                string h5UserInfoResult = client.DownloadString($"https://mpx.wetalk.im/cgi-bin/ticket/getticket?access_token={ token.access_token }&type=jsapi");
+                if (JObject.Parse(h5UserInfoResult).TryGetValue("ticket", out JToken value))
+                {
+                    ticke = value.ToString();
+                }
+            }
+            return ticke;
+        }
+
+        /// <summary>
+        /// 获取h5签名
+        /// </summary>
+        /// <param name="ticket"></param>
+        /// <returns></returns>
+        internal string Sign(string ticket, H5Sign config)
+        {
+            // 注意这里参数名必须全部小写，且必须有序
+            string input = $"jsapi_ticket={ ticket }&noncestr={ config.NonceStr }&timestamp={ config.Timestamp }&url={config.url}";
+            SHA1 sHA1 = SHA1.Create();
+            byte[] buffer = sHA1.ComputeHash(Encoding.UTF8.GetBytes(input));
+            return BitConverter.ToString(buffer).Replace("-", string.Empty).ToString().ToLower();
         }
     }
 }

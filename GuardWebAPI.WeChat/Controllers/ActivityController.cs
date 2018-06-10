@@ -1,18 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GuardWebAPI.WeChat.Models;
+﻿using GuardWebAPI.WeChat.Models;
 using GuardWebAPI.WeChat.Models.ActivityInfo;
 using GuardWebAPI.WeChat.Services.ActivityInfo;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using System;
+using System.Linq;
 
 namespace GuardWebAPI.WeChat.Controllers
 {
     [Produces("application/json")]
     public class ActivityController : Controller
     {
+
+        private IMemoryCache _memoryCache;
+
+        public ActivityController(IMemoryCache memoryCache)
+        {
+            this._memoryCache = memoryCache;
+        }
+
         /// <summary>
         /// 获取中奖记录总信息接口
         /// </summary>
@@ -382,6 +388,54 @@ namespace GuardWebAPI.WeChat.Controllers
             }
         }
 
+        /// <summary>
+        /// 查询H5用户信息
+        /// </summary>
+        /// <param name="req"></param>
+        /// <returns></returns>
+        [HttpGet("api/activity/getSignature")]
+        public ResultBase GetH5Signature(string code = "", string url = "https://activity.topcn.xin")
+        {
+            ActivityInfoService activityInfoService = new ActivityInfoService();
+            H5Sign resq = new H5Sign();
+            try
+            {
+                if (!_memoryCache.TryGetValue("Cache_H5Ticket", out string ticket))
+                {
+                    ticket = activityInfoService.GetH5Ticket(code);
+                    _memoryCache.Set("Cache_H5Ticket", ticket, DateTimeOffset.Now.AddHours(1.5));
+                }
+                resq.url = url;
+                resq.AppId = "wxc1a7dbfa678d92ce";
+                resq.Signature = activityInfoService.Sign(ticket, resq);
+            }
+            catch (Exception ex)
+            {
+                return new ResultBase
+                {
+                    IsSuccess = false,
+                    Code = CodeConstant.ServerError,
+                    Message = ex.Message + ex.StackTrace
+                };
+            }
 
+            if (resq != null && !string.IsNullOrEmpty(resq.Signature))
+            {
+                return new ResultBase
+                {
+                    IsSuccess = true,
+                    Code = CodeConstant.Success,
+                    Data = resq
+                };
+            }
+            else
+            {
+                return new ResultBase
+                {
+                    IsSuccess = false,
+                    Code = CodeConstant.DataNull
+                };
+            }
+        }
     }
 }
