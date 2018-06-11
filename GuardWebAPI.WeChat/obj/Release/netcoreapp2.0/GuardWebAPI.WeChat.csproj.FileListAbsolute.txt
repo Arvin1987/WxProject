@@ -24,3 +24,4 @@ C:\project\WxProject\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.We
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.AssemblyInfo.cs
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.dll
 C:\project\WxProject\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.pdb
+C:\project\WxProject\GuardWebAPI.WeChat\obj\Release\netcoreapp2.0\GuardWebAPI.WeChat.csprojResolveAssemblyReference.cache

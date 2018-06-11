@@ -12,7 +12,7 @@ namespace GuardWebAPI.WeChat
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                // .UseUrls("http://localhost:8000")
+                 .UseUrls("http://localhost:8000")
                 .UseStartup<Startup>()
                 .Build();
     }

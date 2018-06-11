@@ -251,9 +251,9 @@ namespace GuardWebAPI.WeChat.Services.ActivityInfo
             string ticke = string.Empty;
             WebClient client = new WebClient();
 
-            string tokenResult = client.DownloadString($"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxc1a7dbfa678d92ce&secret=rmgMs5fnuoRBJ3YyZexNV2w00huW0M");
+            string tokenResult = client.DownloadString($"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx3283d85d64449029&secret=f6b15e0e2c8eac475e45e3bb61c349e8");
 
-            Console.WriteLine("gettoken url:" + $"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxc1a7dbfa678d92ce&secret=rmgMs5fnuoRBJ3YyZexNV2w00huW0M" + "response:" + tokenResult);
+            Console.WriteLine("gettoken url:" + $"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx3283d85d64449029&secret=f6b15e0e2c8eac475e45e3bb61c349e8" + "response:" + tokenResult);
 
             if (!string.IsNullOrEmpty(tokenResult))
             {
